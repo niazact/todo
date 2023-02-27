@@ -1,3 +1,6 @@
+import zipfile
+import pathlib
+
 FILEPATH="todos.txt"
 
 def get_todos(filepath=FILEPATH):
@@ -11,11 +14,21 @@ def write_todos(todos_data,filepath=FILEPATH) :
         file.writelines(todos_data)
 
 
+def make_archive(dest_dir, filepaths):
+    dest_path = pathlib.Path(dest_dir, 'compressed.zip')
+    with zipfile.ZipFile(dest_path, 'w') as archive:
+        for filename in filepaths:
+            filename = pathlib.Path(filename)
+            archive.write(filename, arcname=filename.name)
+
+
+
 
 if __name__ == "__main__" :
     data=get_todos() ;
     data.append(input("Enter Todo : ") + "\n")
     write_todos(data)
     print(get_todos())
+    make_archive("dest",["gui.py", "main.py"])
 
 
