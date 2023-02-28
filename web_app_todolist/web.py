@@ -23,4 +23,6 @@ st.text_input(label=" ",
               placeholder='Add New Todo...' ,
               key="todo",
               on_change=add_todo)
+st.session_state
+print("hello")
 

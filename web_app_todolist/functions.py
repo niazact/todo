@@ -5,7 +5,7 @@ FILEPATH="todos.txt"
 
 def get_todos(filepath=FILEPATH):
     with open(filepath) as file:
-        data=file.readlines()
+        data = file.readlines()
         return data
 
 
@@ -29,6 +29,7 @@ if __name__ == "__main__" :
     data.append(input("Enter Todo : ") + "\n")
     write_todos(data)
     print(get_todos())
-    make_archive("dest",["gui.py", "main.py"])
+    make_archive("dest",
+                 ["gui.py", "main.py"])
 
 
