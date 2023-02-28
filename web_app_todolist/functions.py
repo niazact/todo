@@ -2,7 +2,7 @@ import zipfile
 import pathlib
 
 FILEPATH="todos.txt"
-
+num =5
 def get_todos(filepath=FILEPATH):
     with open(filepath) as file:
         data = file.readlines()

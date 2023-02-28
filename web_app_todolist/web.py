@@ -24,5 +24,4 @@ st.text_input(label=" ",
               key="todo",
               on_change=add_todo)
 st.session_state
-print("hello")
 
